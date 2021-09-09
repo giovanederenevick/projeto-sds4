@@ -1,10 +1,14 @@
 package br.com.giovanederenevick.dsvendas.dto;
 
 import br.com.giovanederenevick.dsvendas.entities.Sale;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 
+@Data
+@NoArgsConstructor
 public class SaleDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -15,9 +19,6 @@ public class SaleDTO implements Serializable {
     private Double amount;
     private LocalDate date;
     private SellerDTO seller;
-
-    public SaleDTO() {
-    }
 
     public SaleDTO(Long id, Integer visited, Integer deals, Double amount, LocalDate date, SellerDTO seller) {
         this.id = id;
@@ -35,53 +36,5 @@ public class SaleDTO implements Serializable {
         this.amount = entity.getAmount();
         this.date = entity.getDate();
         this.seller = new SellerDTO(entity.getSeller());
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Integer getVisited() {
-        return visited;
-    }
-
-    public void setVisited(Integer visited) {
-        this.visited = visited;
-    }
-
-    public Integer getDeals() {
-        return deals;
-    }
-
-    public void setDeals(Integer deals) {
-        this.deals = deals;
-    }
-
-    public Double getAmount() {
-        return amount;
-    }
-
-    public void setAmount(Double amount) {
-        this.amount = amount;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    public SellerDTO getSeller() {
-        return seller;
-    }
-
-    public void setSeller(SellerDTO seller) {
-        this.seller = seller;
     }
 }
