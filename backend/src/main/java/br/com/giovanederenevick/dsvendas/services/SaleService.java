@@ -29,7 +29,7 @@ public class SaleService {
         sellerRepository.findAll();
 
         Page<Sale> result = saleRepository.findAll(pageable);
-
+        System.out.println("TESTE");
         return result.map(SaleDTO::new);
     }
 
